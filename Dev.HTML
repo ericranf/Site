@@ -1,0 +1,98 @@
+
+
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website Title</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Times New Roman", Times, serif;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #duImage img {
+    max-width: 50%;
+    animation: fadeInOut 5s forwards;
+  }
+
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #fadeInText {
+    display: none;
+  }
+
+  #fadeInText.visible {
+    display: block;
+  }
+
+  #text1, #text2 {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #text2 {
+    animation-delay: 2s; /* Delaying P2 animation by 2 seconds after P1 */
+  }
+
+  #text1 {
+    font-size: 30px;
+    font-style: italic;
+  }
+
+  #text2 {
+    font-size: 28px;
+    font-family: Calibri, Arial, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div id="duImage">
+  <img src="image (7).png" alt="Du Image">
+</div>
+<div id="fadeInText">
+  <p id="text1">Thank you for your interest</p>
+  <p id="text2">Our site is currently in development</p>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const duImage = document.getElementById('duImage');
+    const fadeInText = document.getElementById('fadeInText');
+
+    setTimeout(function() {
+      duImage.style.display = 'none';
+      fadeInText.classList.add('visible');
+    }, 5000); // Adjust timing (5000ms = 5 seconds) as needed
+  });
+</script>
+</body>
+</html>
